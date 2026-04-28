@@ -8,13 +8,17 @@ export const App = () => {
   const [state, setState] = useState<Good[]>([]);
 
   const handleLoadAll = () => {
-    getAll().then(data => {
-      setState(data);
-    });
+    getAll()
+      .then(data => {
+        setState(data);
+      })
+      .catch(() => {});
   };
 
   const handleLoadFirst = () => {
-    get5First().then(data => setState(data));
+    get5First()
+      .then(data => setState(data))
+      .catch(() => {});
   };
 
   const handleLoadRed = () => {
